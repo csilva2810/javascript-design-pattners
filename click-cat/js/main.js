@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.innerHTML = '';
 
   var cats = [
-    { name: 'Felino', image: 'cat-1.jpg', counter: 0 },
-    { name: 'Alfredo', image: 'cat-2.jpg', counter: 0 },
-    { name: 'Godofredo', image: 'cat-3.jpg', counter: 0 },
-    { name: 'Harry & Potter', image: 'cat-4.jpg', counter: 0 },
-    { name: 'Peludo', image: 'cat-5.jpg', counter: 0 }
+    { name: 'Felino', image: 'images/cat-1.jpg', counter: 0 },
+    { name: 'Alfredo', image: 'images/cat-2.jpg', counter: 0 },
+    { name: 'Godofredo', image: 'images/cat-3.jpg', counter: 0 },
+    { name: 'Harry & Potter', image: 'images/cat-4.jpg', counter: 0 },
+    { name: 'Peludo', image: 'images/cat-5.jpg', counter: 0 }
   ];
 
   var buildCatList = function (cats) {
