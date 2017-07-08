@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Felino', image: 'cat-1.jpg', counter: 0 },
     { name: 'Alfredo', image: 'cat-2.jpg', counter: 0 },
     { name: 'Godofredo', image: 'cat-3.jpg', counter: 0 },
-    { name: 'Harry', image: 'cat-4.jpg', counter: 0 },
+    { name: 'Harry & Potter', image: 'cat-4.jpg', counter: 0 },
     { name: 'Peludo', image: 'cat-5.jpg', counter: 0 }
   ];
 
@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var buildDetails = function () {
     var details = document.createElement('div');
     details.classList.add('cat-details');
+    details.classList.add('hidden');
+    details.classList.add('card');
     document.body.appendChild(details);
   }
 
@@ -60,10 +62,15 @@ document.addEventListener('DOMContentLoaded', function () {
       clicks.textContent = cat.counter;
     });
 
-    details.innerHTML = '';
-    details.appendChild(name);
-    details.appendChild(image);
-    details.appendChild(clicks);
+    details.classList.add('hidden');
+
+    setTimeout(function () {
+      details.innerHTML = '';
+      details.appendChild(name);
+      details.appendChild(image);
+      details.appendChild(clicks);
+      details.classList.remove('hidden');
+    }, 300);
 
   }
 
