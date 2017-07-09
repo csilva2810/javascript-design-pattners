@@ -17,38 +17,34 @@ document.addEventListener('DOMContentLoaded', function () {
   var app = document.querySelector('#app');
 
   var model = {
-    cats: [],
-    selectedCat: null,
-
-    init: function () {
-      this.cats = [
-        { 
-          name: 'Felino', 
-          image: 'https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg',
-          counter: 0 
-        },
-        { 
-          name: 'Alfredo', 
-          image: 'https://s-media-cache-ak0.pinimg.com/736x/e8/90/0a/e8900a07923cafc72c252e982163af0f.jpg',
-          counter: 0 
-        },
-        { 
-          name: 'Godofredo', 
-          image: 'http://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg',
-          counter: 0 
-        },
-        { 
-          name: 'Harry & Potter', 
-          image: 'https://www.petfinder.com/wp-content/uploads/2012/11/125950112-adopt-second-cat-632x475.jpg',
-          counter: 0 
-        },
-        { 
-          name: 'Peludo', 
-          image: 'http://www.hillspet.com/HillsPetUS/v1/portal/en/us/cat-care/images/HP_PCC_md_0130_cat53.jpg',
-          counter: 0 
-        }
-      ];
-    }
+    cats: [
+      {
+        name: 'Felino',
+        image: 'https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg',
+        counter: 0
+      },
+      {
+        name: 'Alfredo',
+        image: 'https://s-media-cache-ak0.pinimg.com/736x/e8/90/0a/e8900a07923cafc72c252e982163af0f.jpg',
+        counter: 0
+      },
+      {
+        name: 'Godofredo',
+        image: 'http://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg',
+        counter: 0
+      },
+      {
+        name: 'Harry & Potter',
+        image: 'https://www.petfinder.com/wp-content/uploads/2012/11/125950112-adopt-second-cat-632x475.jpg',
+        counter: 0
+      },
+      {
+        name: 'Peludo',
+        image: 'http://www.hillspet.com/HillsPetUS/v1/portal/en/us/cat-care/images/HP_PCC_md_0130_cat53.jpg',
+        counter: 0
+      }
+    ],
+    selectedCat: null
   }
 
   var octopus = {
@@ -72,9 +68,10 @@ document.addEventListener('DOMContentLoaded', function () {
       var index = this.getCats().findIndex(function (c) {
         return c.name === model.selectedCat.name; 
       });
-      console.log(cat);
+      
       model.cats[index] = cat;
       this.toggleEditForm();
+
       catListView.render();
       catDetailView.render();
       editFormView.render();
@@ -90,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     init: function () {
-      model.init();
       catListView.init();
       catDetailView.init();
       editFormView.init();
